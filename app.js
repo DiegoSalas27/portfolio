@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 
 //Serve static assets if we are in production
 if (process.env.NODE_ENV === "production") {
-  // Set the static folder
+  // Set static folder
   app.use(express.static("client/build"));
 
   app.get("*", (req, res) => {

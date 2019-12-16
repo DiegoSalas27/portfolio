@@ -2,7 +2,7 @@
   "name": "modern-portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node app.js",
