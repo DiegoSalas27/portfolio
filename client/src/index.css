@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap");
+.contenedor {
+  margin: auto;
+  width: 100%; }
+
+.header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background: #be4646; }
+  .header .contenedor {
+    display: flex;
+    justify-content: space-between; }
+
+.logo {
+  margin: 15px 0 0 15px;
+  letter-spacing: 1.5px;
+  color: #fff;
+  font-family: "Yanone Kaffeesatz", sans-serif; }
+
+.btn-menu {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding-top: 1.5rem;
+  cursor: pointer; }
+  .btn-menu .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #fff; }
+
+.menu {
+  position: absolute;
+  z-index: -1;
+  left: -100%;
+  top: 60px;
+  width: 100%;
+  transition: all 0.2s ease-out; }
+  .menu .menu-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .menu .menu-nav .nav-item {
+      cursor: pointer;
+      font-family: "Yanone Kaffeesatz", sans-serif;
+      font-size: 20px;
+      padding: 3px;
+      background: #be4646; }
+      .menu .menu-nav .nav-item .nav-link {
+        color: #000; }
+        .menu .menu-nav .nav-item .nav-link:hover {
+          color: white; }
+      .menu .menu-nav .nav-item.current .nav-link {
+        color: white; }
+      .menu .menu-nav .nav-item:hover {
+        background: #ae3d3d; }
+
+.show {
+  transition-delay: 0.3s;
+  left: 0;
+  top: 60px; }
+
+@media (min-width: 700px) {
+  .menu {
+    position: relative;
+    z-index: 2;
+    width: auto;
+    top: 0;
+    left: 10px; }
+  .menu-nav {
+    display: flex; }
+    .menu-nav .nav-item {
+      padding: 12px !important; }
+  .btn-menu {
+    display: none; } }
+
+.index-banner {
+  background-image: url("./img/developer-banner.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: calc(100vh - 60px); }
+
+.banner .lead {
+  color: #eece1a;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px; }
+
+.banner .lead-email {
+  color: #eece1a;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1px; }
+
+.banner .display-4 {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  letter-spacing: 1px; }
+
+.banner .icons a {
+  padding: 0.4rem;
+  color: #fff; }
+  .banner .icons a:hover {
+    color: #eece1a;
+    transition: all 0.2s ease-out; }
+
+.banner .short-bio {
+  background: #515151;
+  width: 80%;
+  margin-top: 25px;
+  padding: 0.5rem;
+  border-bottom: #eece1a 5px solid; }
+
+.form-g input:focus,
+.form-g textarea:focus {
+  border: none;
+  outline: none; }
+
+.form-g input,
+.form-g textarea {
+  height: 40px;
+  border-radius: 1px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8), 0 3px 10px 0 rgba(0, 0, 0, 0.8);
+  width: 100%;
+  padding-left: 20px;
+  margin: 0.5rem;
+  border: none; }
+
+.form-g textarea {
+  padding-top: 10px; }
+
+.right-menu {
+  align-items: center;
+  text-align: center; }
+  .right-menu .btn-send {
+    margin-left: 15px;
+    height: 60px;
+    width: 100px;
+    border: none;
+    margin-top: 15px;
+    transition: all 0.2s ease-out; }
+    .right-menu .btn-send:focus {
+      border: none;
+      outline: none; }
+    .right-menu .btn-send:hover {
+      background: #be4646;
+      color: #fff; }
+  .right-menu .invalid-feedback {
+    font-weight: bold; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: #fff;
+  height: 60px;
+  transition: all 0.2s ease-out; }
+  #main-footer.move {
+    transform: translate3d(0, 266px, 0); }
+  #main-footer .footer-nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-evenly; }
+  #main-footer .footer-link {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none; }
+    #main-footer .footer-link:hover {
+      color: #eece1a;
+      transition: all 0.2s ease-out; }
+
+.about {
+  background-image: url("./img/about.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: calc(100vh - 60px);
+  padding-top: 100px; }
+
+.lg-heading {
+  font-size: 6rem;
+  color: #fff;
+  padding: 0.2rem 1rem; }
+
+.sm-heading {
+  color: #fff;
+  padding: 0.2rem 3rem; }
+
+.text-sec {
+  color: #eece1a; }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  padding: 0 25px 25px 25px;
+  grid-template-areas: "bioimage bio bio";
+  grid-template-columns: repeat(3, 1fr); }
+
+.bio-image {
+  grid-area: bioimage;
+  margin: auto;
+  border-radius: 50%;
+  border: #eece1a 3px solid;
+  width: 250px;
+  height: 250px; }
+
+.bio {
+  color: #fff;
+  padding: 0 1.5rem;
+  text-align: justify;
+  text-justify: inter-word;
+  grid-area: bio;
+  font-size: 1.5rem; }
+
+.skill-content {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  display: grid;
+  grid-gap: 30px;
+  padding: 25px;
+  grid-template-columns: 1fr;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .skill-content .skill-text {
+    color: #444; }
+
+.jobs {
+  background-image: url("./img/jobs.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: calc(100vh - 60px);
+  padding-top: 100px; }
+
+.job-info {
+  align-items: center;
+  text-align: center;
+  display: grid;
+  grid-gap: 30px;
+  padding: 25px;
+  grid-template-areas: "job1 job2";
+  grid-template-columns: repeat(2, 1fr); }
+
+.job-1 {
+  grid-area: job1; }
+
+.job-2 {
+  grid-area: job2; }
+
+.job img {
+  height: 100px; }
+
+.job-content {
+  padding: 0;
+  margin: 0; }
+
+.project-main {
+  background-image: url("./img/projects.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: calc(100vh - 60%);
+  padding-top: 100px; }
+
+.project {
+  position: relative;
+  padding: 2.5rem; }
+  .project .project-info {
+    position: relative;
+    padding: 0.5rem;
+    margin: 50px 10px 50px 10px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    .project .project-info h4,
+    .project .project-info p {
+      color: #000; }
+    .project .project-info .project-img:hover > .overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: #000;
+      opacity: 0.5;
+      border-radius: 30px; }
+    .project .project-info .overlay {
+      display: flex;
+      justify-content: space-around;
+      line-height: 10px; }
+      .project .project-info .overlay input {
+        position: relative;
+        height: 35px;
+        margin-top: 35%;
+        display: none; }
+    .project .project-info .img {
+      background-size: cover;
+      width: 250px;
+      height: 200px;
+      position: relative; }
+      .project .project-info .img:hover .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(255, 38, 0, 0.5); }
+        .project .project-info .img:hover .overlay input {
+          display: block;
+          outline: none;
+          box-shadow: none; }
+    .project .project-info .project1-img {
+      background-image: url("./img/portfolio.png"); }
+    .project .project-info .project2-img {
+      background-image: url("./img/ecommerce.png"); }
+    .project .project-info .project3-img {
+      background-image: url("./img/facerecog.png"); }
+    .project .project-info .project-content {
+      position: absolute;
+      left: 20%;
+      top: 5%;
+      padding: 1.5rem 1.5rem 0 5rem; }
+
+* {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+p,
+h3,
+h4,
+h5 {
+  color: #fff; }
+
+ul {
+  list-style: none; }
+
+body {
+  margin: 0; }
+
+.main {
+  min-height: calc(100vh - 60px);
+  transition: all 0.2s ease-out;
+  transition-delay: 0.3s; }
+  .main.move {
+    transform: translate3d(0, 266px, 0);
+    transition-delay: 0s; }
+
+@media screen and (min-width: 1171px) {
+  .skill-content {
+    grid-template-columns: repeat(3, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .main {
+    align-items: center;
+    text-align: center; }
+  .skill-content {
+    grid-template-columns: repeat(2, 1fr); }
+  .project-info .img {
+    margin: auto; }
+  .project-info .project-content {
+    position: relative !important;
+    left: 0% !important;
+    top: 5%;
+    padding: 1.5rem 1.5rem 0 1.5rem !important; } }
+
+@media screen and (max-width: 768px) {
+  .main {
+    align-items: center;
+    text-align: center; }
+  .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem; }
+  .about-info {
+    padding: 0;
+    grid-template-areas: "bioimage" "bio";
+    grid-template-columns: 1fr; }
+  .skill-content {
+    margin: 1.5rem 1.5rem;
+    grid-template-columns: repeat(3, 1fr); }
+  .project-info .img {
+    margin: auto; }
+  .project-info .project-content {
+    position: relative !important;
+    left: 0% !important;
+    top: 50%;
+    padding: 1.5rem 1.5rem 0 1.5rem !important; } }
+
+@media screen and (max-width: 500px) {
+  .main {
+    align-items: center;
+    text-align: center; }
+  .skill-content {
+    margin: 1.5rem 1.5rem;
+    grid-template-columns: repeat(2, 1fr); }
+  .job-info {
+    padding: 45px 0;
+    grid-template-areas: "job1" "job2";
+    grid-template-columns: 1fr; }
+  .lg-heading {
+    font-size: 3rem;
+    color: #fff;
+    padding: 0.2rem 1rem; }
+  .sm-heading {
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 0.2rem 3rem; }
+  .text-sec {
+    color: #eece1a; }
+  .project-info .img {
+    margin: auto;
+    width: 150px !important;
+    height: 150px !important; }
+  .project-info .project-content {
+    position: relative !important;
+    left: 0% !important;
+    top: 50%;
+    padding: 1.5rem 1.5rem 0 1.5rem !important; } }
