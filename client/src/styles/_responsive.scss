@@ -1,0 +1,118 @@
+@include mediaXl {
+  .skill-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@include mediaLg {
+  .main {
+    align-items: center;
+    text-align: center;
+  }
+  .skill-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-info {
+    .img {
+      margin: auto;
+    }
+
+    .project-content {
+      position: relative !important;
+      left: 0% !important;
+      top: 5%;
+      padding: 1.5rem 1.5rem 0 1.5rem !important;
+    }
+  }
+}
+
+@include mediaMd {
+  .main {
+    align-items: center;
+    text-align: center;
+  }
+
+  .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .about-info {
+    padding: 0;
+    grid-template-areas:
+      "bioimage"
+      "bio";
+
+    grid-template-columns: 1fr;
+  }
+
+  .skill-content {
+    margin: 1.5rem 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-info {
+    .img {
+      margin: auto;
+    }
+
+    .project-content {
+      position: relative !important;
+      left: 0% !important;
+      top: 50%;
+      padding: 1.5rem 1.5rem 0 1.5rem !important;
+    }
+  }
+}
+
+@include mediaSm {
+  .main {
+    align-items: center;
+    text-align: center;
+  }
+  .skill-content {
+    margin: 1.5rem 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .job-info {
+    padding: 45px 0;
+    grid-template-areas:
+      "job1"
+      "job2";
+
+    grid-template-columns: 1fr;
+  }
+
+  .lg-heading {
+    font-size: 3rem;
+    color: $primary-color;
+    padding: 0.2rem 1rem;
+  }
+
+  .sm-heading {
+    font-size: 1.2rem;
+    color: $primary-color;
+    padding: 0.2rem 3rem;
+  }
+
+  .text-sec {
+    color: $text-color;
+  }
+
+  .project-info {
+    .img {
+      margin: auto;
+      width: 150px !important;
+      height: 150px !important;
+    }
+
+    .project-content {
+      position: relative !important;
+      left: 0% !important;
+      top: 50%;
+      padding: 1.5rem 1.5rem 0 1.5rem !important;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.jobs {
+  background-image: url("./img/jobs.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: calc(100vh - 60px);
+  padding-top: 100px;
+}
+
+.job-info {
+  align-items: center;
+  text-align: center;
+  display: grid;
+  grid-gap: 30px;
+  padding: 25px;
+  grid-template-areas: "job1 job2";
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.job-1 {
+  grid-area: job1;
+}
+.job-2 {
+  grid-area: job2;
+}
+
+.job {
+  img {
+    height: 100px;
+  }
+}
+
+.job-content {
+  padding: 0;
+  margin: 0;
+}

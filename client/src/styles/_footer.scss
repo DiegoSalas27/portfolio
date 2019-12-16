@@ -1,0 +1,30 @@
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken(#444, 10);
+  color: $primary-color;
+  height: 60px;
+  @include easeOut;
+  &.move {
+    transform: translate3d(0, 266px, 0);
+  }
+
+  .footer-nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-evenly;
+  }
+
+  .footer-link {
+    cursor: pointer;
+    color: $primary-color;
+    text-decoration: none;
+    &:hover {
+      color: $text-color;
+      @include easeOut;
+    }
+  }
+}

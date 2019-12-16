@@ -1,0 +1,97 @@
+.index-banner {
+  background-image: url("./img/developer-banner.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: calc(100vh - 60px);
+}
+
+.banner {
+  .lead {
+    color: $text-color;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  .lead-email {
+    color: $text-color;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .display-4 {
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    letter-spacing: 1px;
+  }
+
+  .icons {
+    a {
+      padding: 0.4rem;
+      color: $primary-color;
+
+      &:hover {
+        color: $text-color;
+        @include easeOut;
+      }
+    }
+  }
+
+  .short-bio {
+    background: lighten(#444, 5);
+    width: 80%;
+    margin-top: 25px;
+    padding: 0.5rem;
+    border-bottom: $text-color 5px solid;
+  }
+}
+
+.form-g {
+  input:focus,
+  textarea:focus {
+    border: none;
+    outline: none;
+  }
+  input,
+  textarea {
+    height: 40px;
+    border-radius: 1px;
+    box-shadow: 0 2px 4px 0 rgba(black, 0.8), 0 3px 10px 0 rgba(black, 0.8);
+    width: 100%;
+    padding-left: 20px;
+    margin: 0.5rem;
+    border: none;
+  }
+
+  textarea {
+    padding-top: 10px;
+  }
+}
+
+.right-menu {
+  align-items: center;
+  text-align: center;
+  .btn-send {
+    margin-left: 15px;
+    height: 60px;
+    width: 100px;
+    border: none;
+    margin-top: 15px;
+    @include easeOut;
+    &:focus {
+      border: none;
+      outline: none;
+    }
+    &:hover {
+      background: $secondary-color;
+      color: $primary-color;
+    }
+  }
+  .invalid-feedback {
+    font-weight: bold;
+  }
+
+  .valid-feedback {
+    color: green;
+    font-weight: bold;
+  }
+}

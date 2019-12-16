@@ -1,35 +1,28 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const cors = require("cors");
 const path = require("path");
 const http = require("http");
 
 const emailRoute = require("./api/email");
 
 app.use(bodyParser.json());
-app.use(cors());
 
 app.use("/sendEmail", emailRoute);
 
-app.use(cors());
-
 app.use((req, res, next) => {
-  const error = new Error("Not found");
-  error.status = 404;
-  next(error);
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+    return res.status(200).json({});
+  }
+  next();
 });
 
-app.use((req, res, next) => {
-  res.status(error.status || 500);
-  res.json({
-    error: {
-      message: error.message
-    }
-  });
-});
-
-//Serve static assets if we are in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder
   app.use(express.static("client/build"));
@@ -39,9 +32,15 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const port = process.env.PORT || 8080;
+app.use((req, res, next) => {
+  const error = new Error("Not found");
+  error.status = 404;
+  next(error);
+});
+
+const PORT = process.env.PORT || 8080;
 const server = http.createServer(app);
 
-server.listen(port, () => {
-  console.log(`Server started on port:${port}`);
+server.listen(PORT, () => {
+  console.log(`Server running on port: ${PORT}`);
 });

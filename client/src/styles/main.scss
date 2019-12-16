@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap");
+@import "./config.scss";
+@import "./header.scss";
+@import "./banner.scss";
+@import "./footer.scss";
+@import "./about.scss";
+@import "./jobs.scss";
+@import "./projects.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+h3,
+h4,
+h5 {
+  color: $primary-color;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+  min-height: calc(100vh - 60px);
+  @include easeOut;
+  transition-delay: 0.3s;
+
+  &.move {
+    transform: translate3d(0, 266px, 0);
+    transition-delay: 0s;
+  }
+}
+
+@import "./responsive.scss";

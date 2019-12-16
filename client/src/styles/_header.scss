@@ -1,0 +1,105 @@
+.contenedor {
+  margin: auto;
+  width: 100%;
+}
+
+.header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+
+  background: $secondary-color;
+  .contenedor {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.logo {
+  margin: 15px 0 0 15px;
+  letter-spacing: 1.5px;
+  color: $primary-color;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+
+.btn-menu {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding-top: 1.5rem;
+  cursor: pointer;
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: $primary-color;
+  }
+}
+
+.menu {
+  position: absolute;
+  z-index: -1;
+  left: -100%;
+  top: 60px;
+  width: 100%;
+  @include easeOut;
+
+  .menu-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .nav-item {
+      cursor: pointer;
+      font-family: "Yanone Kaffeesatz", sans-serif;
+      font-size: 20px;
+      padding: 3px;
+      background: $secondary-color;
+
+      .nav-link {
+        color: $inactive-color;
+        &:hover {
+          color: $active-color;
+        }
+      }
+
+      &.current {
+        .nav-link {
+          color: $active-color;
+        }
+      }
+
+      &:hover {
+        background: darken($secondary-color, 5);
+      }
+    }
+  }
+}
+
+.show {
+  transition-delay: 0.3s;
+  left: 0;
+  top: 60px;
+}
+
+@media (min-width: 700px) {
+  .menu {
+    position: relative;
+    z-index: 2;
+    width: auto;
+    top: 0;
+    left: 10px;
+  }
+
+  .menu-nav {
+    display: flex;
+    .nav-item {
+      padding: 12px !important;
+    }
+  }
+
+  .btn-menu {
+    display: none;
+  }
+}

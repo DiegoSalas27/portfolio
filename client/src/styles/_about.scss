@@ -1,0 +1,64 @@
+.about {
+  background-image: url("./img/about.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: calc(100vh - 60px);
+  padding-top: 100px;
+}
+
+.lg-heading {
+  font-size: 6rem;
+  color: $primary-color;
+  padding: 0.2rem 1rem;
+}
+
+.sm-heading {
+  color: $primary-color;
+  padding: 0.2rem 3rem;
+}
+
+.text-sec {
+  color: $text-color;
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  padding: 0 25px 25px 25px;
+  grid-template-areas: "bioimage bio bio";
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bio-image {
+  grid-area: bioimage;
+  margin: auto;
+  border-radius: 50%;
+  border: $text-color 3px solid;
+  width: 250px;
+  height: 250px;
+}
+
+.bio {
+  color: $primary-color;
+  padding: 0 1.5rem;
+  text-align: justify;
+  text-justify: inter-word;
+  grid-area: bio;
+  font-size: 1.5rem;
+}
+
+.skill-content {
+  margin: 0;
+  padding: 0;
+  background: $primary-color;
+  display: grid;
+  grid-gap: 30px;
+  padding: 25px;
+  grid-template-columns: 1fr;
+
+  .skill-text {
+    color: #444;
+  }
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
