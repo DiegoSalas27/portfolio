@@ -33,7 +33,7 @@ function Banner() {
     };
 
     axios
-      .post("http://localhost:5000/sendEmail", messenger)
+      .post("/sendEmail", messenger)
       .then(response => {
         console.log(response);
         setError(response);
