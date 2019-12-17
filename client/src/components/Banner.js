@@ -28,9 +28,16 @@ function Banner() {
 
     const messenger = {
       from: email,
-      to: "dominicsc2hs@gmail.com",
+      to: "mustafa14@ethereal.email",
+      replyTo: email,
       subject: subject,
-      text: body
+      text: body,
+      html: `
+      <h1>Messenger details</h1>
+      <p> Email: ${email}</p>
+      <h3>Message</h3>
+      <p>${body}</p>
+      `
     };
 
     try {

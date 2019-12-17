@@ -21,13 +21,12 @@ function validateInputs(email, subject, text) {
 }
 
 exports.sendEmail = function(req, res) {
-  var transport = nodemailer.createTransport({
-    host: "smtp.googlemail.com", // Gmail Host
-    port: 465, // Port
-    secure: true,
+  const transporter = nodemailer.createTransport({
+    host: "smtp.ethereal.email",
+    port: 587,
     auth: {
-      user: "dominicsc2hs@gmail.com",
-      pass: "Lifeisarisk2013@"
+      user: "mustafa14@ethereal.email",
+      pass: "GTd2TkE3pFcsmQXqQg"
     }
   });
 
@@ -36,7 +35,7 @@ exports.sendEmail = function(req, res) {
     Object.entries(validateInputs(from, subject, text)).length === 0 &&
     validateInputs(from, subject, text).constructor === Object
   ) {
-    transport.sendMail(req.body, (err, info) => {
+    transporter.sendMail(req.body, (err, info) => {
       if (err) {
         console.log("ERROR!!!!!!", err);
       } else {
