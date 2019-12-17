@@ -7,38 +7,54 @@ function Banner() {
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
   const [error, setError] = useState({
-    data: {
-      error: {
-        email: "",
-        subject: "",
-        text: "",
-        message: ""
-      }
+    message: {
+      email: "",
+      subject: "",
+      text: ""
     }
   });
+  const [sent, setSent] = useState("");
 
   useEffect(() => {
-    // console.log(error);
-    // if (error.data.error.message !== "") {
-    //   alert(1);
-    // }
-  }, [error]);
+    console.log(error);
+  }, [error, sent]);
 
-  function sendEmail(e) {
+  async function sendEmail(e) {
     e.preventDefault();
+    const loader = document.querySelector(".loader");
+    const loaderText = document.querySelector(".loading-img");
+    loaderText.innerHTML = "Seding email...";
+    loader.classList.add("show");
+
     const messenger = {
       from: email,
+      to: "dominicsc2hs@gmail.com",
       subject: subject,
       text: body
     };
-
-    axios
-      .post("/sendEmail", messenger)
-      .then(response => {
-        console.log(response);
-        setError(response);
-      })
-      .catch(error => console.error("Error:", error));
+    debugger;
+    try {
+      const res = await axios.post(
+        "http://localhost:8080/sendEmail",
+        messenger
+      );
+      console.log("RESPUESTA", res);
+      setError({
+        message: {
+          email: "",
+          subject: "",
+          text: ""
+        }
+      });
+      loaderText.innerHTML = "Email sent!";
+      setTimeout(() => {
+        loader.classList.remove("show");
+      }, 2000);
+    } catch (err) {
+      loader.classList.remove("show");
+      setError(err.response.data);
+    }
+    loader.classList.add("hidden");
   }
 
   return (
@@ -83,16 +99,16 @@ function Banner() {
                   <input
                     type="text"
                     className={classnames({
-                      "is-invalid": error.data.error.email
+                      "is-invalid": error.message.email
                     })}
                     placeholder="Enter you email"
                     name="email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                   />
-                  {error.data.error.email && (
+                  {error.message.email && (
                     <div className="invalid-feedback">
-                      {error.data.error.email}
+                      {error.message.email}
                     </div>
                   )}
                 </div>
@@ -100,16 +116,16 @@ function Banner() {
                   <input
                     type="text"
                     className={classnames({
-                      "is-invalid": error.data.error.subject
+                      "is-invalid": error.message.subject
                     })}
                     placeholder="Enter subject"
                     name="subject"
                     value={subject}
                     onChange={e => setSubject(e.target.value)}
                   />
-                  {error.data.error.subject && (
+                  {error.message.subject && (
                     <div className="invalid-feedback">
-                      {error.data.error.subject}
+                      {error.message.subject}
                     </div>
                   )}
                 </div>
@@ -118,17 +134,15 @@ function Banner() {
                     style={{ height: "300px" }}
                     type="text"
                     className={classnames({
-                      "is-invalid": error.data.error.subject
+                      "is-invalid": error.message.text
                     })}
                     placeholder="Enter message"
                     name="body"
                     value={body}
                     onChange={e => setBody(e.target.value)}
                   />
-                  {error.data.error.subject && (
-                    <div className="invalid-feedback">
-                      {error.data.error.subject}
-                    </div>
+                  {error.message.text && (
+                    <div className="invalid-feedback">{error.message.text}</div>
                   )}
                 </div>
                 <input className="btn-send" type="submit" value="Send" />

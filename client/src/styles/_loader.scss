@@ -1,0 +1,56 @@
+.loader {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($inactive-color, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-img {
+  position: fixed;
+  z-index: 100;
+  color: $primary-color;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.loader {
+  &.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+  }
+
+  &.show {
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+  }
+}

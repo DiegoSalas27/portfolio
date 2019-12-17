@@ -7,10 +7,12 @@ import Footer from "../components/common/Footer";
 import About from "../components/About";
 import Jobs from "../components/Jobs";
 import Projects from "../components/Projects";
+import Loader from "../components/common/Loader";
 
 function App() {
   return (
     <Router>
+      <Loader />
       <Header />
       <div className="main">
         <Route exact path="/" component={Banner} />
