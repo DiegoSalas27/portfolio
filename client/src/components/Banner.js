@@ -18,10 +18,10 @@ function Banner() {
   });
 
   useEffect(() => {
-    console.log(error);
-    if (error.data.error.message !== "") {
-      alert(1);
-    }
+    // console.log(error);
+    // if (error.data.error.message !== "") {
+    //   alert(1);
+    // }
   }, [error]);
 
   function sendEmail(e) {
