@@ -32,13 +32,9 @@ function Banner() {
       subject: subject,
       text: body
     };
-    debugger;
+
     try {
-      const res = await axios.post(
-        "http://localhost:8080/sendEmail",
-        messenger
-      );
-      console.log("RESPUESTA", res);
+      const res = await axios.post("/sendEmail", messenger);
       setError({
         message: {
           email: "",
