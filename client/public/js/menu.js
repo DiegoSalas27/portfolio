@@ -12,3 +12,14 @@ btnMenu.addEventListener("click", function() {
   main.classList.toggle("move");
   footer.classList.toggle("move");
 });
+
+navItems.forEach(item => {
+  item.addEventListener("click", function() {
+    nav.classList.toggle("show");
+    navItems.forEach(item => {
+      item.classList.toggle("show");
+    });
+    main.classList.toggle("move");
+    footer.classList.toggle("move");
+  });
+});
