@@ -13,13 +13,18 @@ btnMenu.addEventListener("click", function() {
   footer.classList.toggle("move");
 });
 
-navItems.forEach(item => {
-  item.addEventListener("click", function() {
-    nav.classList.toggle("show");
-    navItems.forEach(item => {
-      item.classList.toggle("show");
+console.log(window.screen.height);
+console.log(window.screen.width);
+
+if (window.screen.width < 700) {
+  navItems.forEach(item => {
+    item.addEventListener("click", function() {
+      nav.classList.toggle("show");
+      navItems.forEach(item => {
+        item.classList.toggle("show");
+      });
+      main.classList.toggle("move");
+      footer.classList.toggle("move");
     });
-    main.classList.toggle("move");
-    footer.classList.toggle("move");
   });
-});
+}
