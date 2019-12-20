@@ -13,9 +13,6 @@ btnMenu.addEventListener("click", function() {
   footer.classList.toggle("move");
 });
 
-console.log(window.screen.height);
-console.log(window.screen.width);
-
 if (window.screen.width < 700) {
   navItems.forEach(item => {
     item.addEventListener("click", function() {

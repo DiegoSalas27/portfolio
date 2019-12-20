@@ -1,15 +1,15 @@
 import React from "react";
+import Heading from "../../common/Heading";
+import Skills from "./Skills";
+import { skills } from "../../resources";
 
 function About() {
   return (
     <div className="about">
-      <h1 className="lg-heading">
-        About <span className="text-sec">Me</span>
-      </h1>
-      <h2 className="sm-heading">Things about me</h2>
+      <Heading heading={"About"} textSec={"Me"} smHeading={"Things about me"} />
       <div className="about-info">
         <img
-          src={require("../img/me.jpeg")}
+          src={require("../../../img/me.jpeg")}
           alt="Diego Salas"
           className="bio-image"
         />
@@ -32,36 +32,16 @@ function About() {
             with any problems in high spirits.
           </p>
         </div>
-        <div className="skills skill-1">
-          <h3>Frontend</h3>
-          <ul className="skill-content">
-            <li className="skill-text">React.js</li>
-            <li className="skill-text">Angular.js</li>
-            <li className="skill-text">HTML5</li>
-            <li className="skill-text">CSS</li>
-            <li className="skill-text">SASS</li>
-            <li className="skill-text">Bootstrap</li>
-          </ul>
-        </div>
-        <div className="skills skill-2">
-          <h3>Backend</h3>
-          <ul className="skill-content">
-            <li className="skill-text">Express.js</li>
-            <li className="skill-text">SpringBoot</li>
-            <li className="skill-text">Node.js</li>
-          </ul>
-        </div>
-        <div className="skills skill-3">
-          <h3>Languages</h3>
-          <ul className="skill-content">
-            <li className="skill-text">Javascript</li>
-            <li className="skill-text">Java</li>
-            <li className="skill-text">Python</li>
-            <li className="skill-text">C#</li>
-            <li className="skill-text">C++</li>
-            <li className="skill-text">Kotlin</li>
-          </ul>
-        </div>
+        {skills.map((skill, i) => {
+          return (
+            <Skills
+              key={i}
+              skillNumber={skill.skillNumber}
+              category={skill.category}
+              categoryList={skill.categoryList}
+            />
+          );
+        })}
       </div>
     </div>
   );

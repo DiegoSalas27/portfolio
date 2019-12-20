@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import classnames from "classnames";
 
-function Banner() {
+function Banner(props) {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
@@ -13,18 +13,12 @@ function Banner() {
       text: ""
     }
   });
-  const [sent, setSent] = useState("");
-
-  useEffect(() => {
-    console.log(error);
-  }, [error, sent]);
 
   async function sendEmail(e) {
     e.preventDefault();
-    const loader = document.querySelector(".loader");
-    const loaderText = document.querySelector(".loading-img");
-    loaderText.innerHTML = "Seding email...";
-    loader.classList.add("show");
+    const { loader, loaderImage } = props;
+    loaderImage.current.innerHTML = "Seding email...";
+    loader.current.classList.add("show");
 
     const messenger = {
       from: email,
@@ -41,7 +35,7 @@ function Banner() {
     };
 
     try {
-      const res = await axios.post("/sendEmail", messenger);
+      await axios.post("/sendEmail", messenger);
       setError({
         message: {
           email: "",
@@ -49,15 +43,15 @@ function Banner() {
           text: ""
         }
       });
-      loaderText.innerHTML = "Email sent!";
+      loaderImage.current.innerHTML = "Email sent!";
       setTimeout(() => {
-        loader.classList.remove("show");
+        loader.current.classList.remove("show");
       }, 2000);
     } catch (err) {
-      loader.classList.remove("show");
+      loader.current.classList.remove("show");
       setError(err.response.data);
     }
-    loader.classList.add("hidden");
+    loader.current.classList.add("hidden");
   }
 
   return (
