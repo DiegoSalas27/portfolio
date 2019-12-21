@@ -1,10 +1,11 @@
 import React, { useRef, createRef } from "react";
-import { navItem } from "../../resources";
 import NavItem from "./NavItem";
 
-function Header({ main }, ref) {
+function Header({ main, t, translate }, ref) {
+  const currentItem = localStorage.link;
+  const navItems = t("Heading.NavItem", { returnObjects: true });
   const refs = useRef(
-    Array.from({ length: navItem.length }, a => createRef(null))
+    Array.from({ length: navItems.length }, a => createRef(null))
   );
 
   function changeActive(e) {
@@ -18,12 +19,13 @@ function Header({ main }, ref) {
     }
 
     e.currentTarget.classList.add("current");
+    localStorage.setItem("link", e.currentTarget.getAttribute("name"));
   }
 
   return (
     <div className="header">
       <div className="contenedor">
-        <h1 className="logo">Portfolio</h1>
+        <h1 className="logo">{t("Heading.logo")}</h1>
         <div className="btn-menu" ref={ref[0]}>
           <div className="btn-line"></div>
           <div className="btn-line"></div>
@@ -31,7 +33,21 @@ function Header({ main }, ref) {
         </div>
         <nav className="menu" ref={ref[1]}>
           <ul className="menu-nav">
-            {navItem.map((item, i) => {
+            <div className="translate-container">
+              <div className="translate" onClick={() => translate("en")}>
+                {t("Heading.enTranslation")} &nbsp;
+              </div>
+              <div className="translate" onClick={() => translate("es")}>
+                {t("Heading.esTranslation")}
+              </div>
+            </div>
+            {navItems.map((item, i) => {
+              currentItem !== undefined &&
+                item.current === "current" &&
+                (item.current = "");
+
+              currentItem == item.name && (item.current = "current");
+
               return (
                 <NavItem
                   key={i}

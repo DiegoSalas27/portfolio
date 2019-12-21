@@ -3,13 +3,13 @@ import Heading from "../../common/Heading";
 import JobItem from "./JobItem";
 import { jobs } from "../../resources";
 
-function Jobs() {
+function Jobs({ t }) {
   return (
     <div className="jobs">
       <Heading
-        heading={"Past"}
-        textSec={"Jobs"}
-        smHeading={"Here is where I've worked"}
+        heading={t("Jobs.heading")}
+        textSec={t("Jobs.textSec")}
+        smHeading={t("Jobs.smHeading")}
       />
       <div className="job-info">
         {jobs.map((job, i) => {

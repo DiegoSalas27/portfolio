@@ -1,12 +1,12 @@
 import React from "react";
 
-function Footer() {
+function Footer({ t }) {
   return (
     <footer id="main-footer">
       <ul className="footer-nav">
         <li className="footer-item">
           <a className="footer-link">
-            Phone: <span className="text-sec">(959363398)</span>
+            {t("Footer.phone")}: <span className="text-sec">(959363398)</span>
           </a>
         </li>
         <li className="footer-item">

@@ -55,6 +55,15 @@
         color: white; }
       .menu .menu-nav .nav-item:hover {
         background: #ae3d3d; }
+    .menu .menu-nav .translate-container {
+      cursor: pointer;
+      padding: 3px;
+      background: #be4646;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .menu .menu-nav .translate-container .translate {
+        padding: 8px 16px; }
 
 .show {
   transition-delay: 0.3s;
@@ -72,6 +81,11 @@
     display: flex; }
     .menu-nav .nav-item {
       margin: 12px !important; }
+  .translate-container {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    margin: 12px !important; }
   .btn-menu {
     display: none; } }
 

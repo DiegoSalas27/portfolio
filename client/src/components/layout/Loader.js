@@ -1,10 +1,10 @@
 import React from "react";
 
-function Loader({}, ref) {
+function Loader({ t }, ref) {
   return (
     <div className="loader" ref={ref[0]}>
       <h1 className="loading-img" ref={ref[1]}>
-        Seding email...
+        {t("Loader.loading")}
       </h1>
     </div>
   );

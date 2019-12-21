@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 
 function NavItem({ current, to, name, changeActive }, ref) {
   return (
-    <li ref={ref} className={`nav-item ${current}`} onClick={changeActive}>
+    <li
+      ref={ref}
+      name={name}
+      className={`nav-item ${current}`}
+      onClick={changeActive}
+    >
       <Link className="nav-link" to={to}>
         {name}
       </Link>

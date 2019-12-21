@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/layout/header/Header";
 import Banner from "../components/pages/banner/Banner";
@@ -10,6 +11,12 @@ import Projects from "../components/pages/projects/Projects";
 import Loader from "../components/layout/Loader";
 
 function App() {
+  const { t, i18n } = useTranslation();
+
+  const translate = lang => {
+    i18n.changeLanguage(lang);
+  };
+
   const btnMenu = useRef(null);
   const nav = useRef(null);
   const main = useRef(null);
@@ -25,20 +32,33 @@ function App() {
 
   return (
     <Router>
-      <Loader ref={[loader, loaderImage]} />
-      <Header main={main} ref={[btnMenu, nav]} />
+      <Loader ref={[loader, loaderImage]} t={t} />
+      <Header main={main} t={t} translate={translate} ref={[btnMenu, nav]} />
       <div className="main" ref={main}>
         <Route
           exact
           path="/"
           render={props => (
-            <Banner {...props} loader={loader} loaderImage={loaderImage} />
+            <Banner
+              {...props}
+              loader={loader}
+              loaderImage={loaderImage}
+              t={t}
+            />
           )}
         />
-        <Route exact path="/AboutMe" component={About} />
-        <Route exact path="/Jobs" component={Jobs} />
-        <Route exact path="/Projects" component={Projects} />
-        <Footer />
+        <Route
+          exact
+          path="/AboutMe"
+          render={props => <About {...props} t={t} />}
+        />
+        <Route exact path="/Jobs" render={props => <Jobs {...props} t={t} />} />
+        <Route
+          exact
+          path="/Projects"
+          render={props => <Projects {...props} t={t} />}
+        />
+        <Footer t={t} />
       </div>
     </Router>
   );

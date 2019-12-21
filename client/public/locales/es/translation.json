@@ -1,0 +1,113 @@
+{
+  "Loader": {
+    "loading": "Enviando correo...",
+    "doneLoading": "¡Correo enviado!"
+  },
+  "Heading": {
+    "logo": "Portafolio",
+    "enTranslation": "Inglés",
+    "esTranslation": "Español",
+    "NavItem": [
+      {
+        "to": "/",
+        "current": "current",
+        "name": "Principal"
+      },
+      {
+        "to": "/AboutMe",
+        "current": "",
+        "name": "Acerca de mí"
+      },
+      {
+        "to": "/Jobs",
+        "current": "",
+        "name": "Trabajos"
+      },
+      {
+        "to": "/Projects",
+        "current": "",
+        "name": "Projectos"
+      }
+    ]
+  },
+  "Banner": {
+    "leadText": "Desarrollador FullStack",
+    "shortBioText": "Profesor de inglés certificado, cocinero y desarrollador de software profesional. Soy un desarrollador web Full Stack desde 2018. Me apasiona los resultados del diseñar y codificar.",
+    "display-6Text": "Disponible para oportunidades laborales",
+    "lead-email": "Envíame un correo",
+    "emailPlaceholder": "Ingrese sú correo",
+    "subjectPlaceholder": "Ingrese el asunto",
+    "bodyPlaceholder": "Ingrese el mensaje",
+    "buttonValue": "Enviar"
+  },
+  "Footer": {
+    "phone": "Teléfono"
+  },
+  "About": {
+    "heading": "Acerca",
+    "textSec": "de mí",
+    "smHeading": "Información personal",
+    "bioText": "Biografía",
+    "bioParagraph": "Soy bachiller en artes culinarias por la Universidad Le Cordon Bleu y también profesor de inglés certificado por la Asociación Cultural Peruano Británica. He ejercido con mucha dedicación ambas profesiones por un periodo de 2 y 5 años respectivamente. Sin embargo, mi pasión siempre ha sido la tecnología. Actualmente, estudio en la UPC de Monterrico la carrera de Ingeniería de software y me encuentro en el IX ciclo de la carrera. Estoy en la búsqueda de superar mis conocimientos en desarrollo de aplicaciones web Full Stack. Actualmente, me dedico a desarrollar aplicaciones web Full Stack con web frameworks como SpringBoot y Express, y bibliotecas frontend como React y freameworks como Angular.js. Me considero una persona dinámica y proactiva capaz de lidiar con cualquier clase de problemas con la mejor disposición y ánimo. ",
+    "skills": [
+      {
+        "skillNumber": "skill-1",
+        "category": "Frontend",
+        "categoryList": [
+          "React.js",
+          "Angular.js",
+          "HTML5",
+          "CSS",
+          "SASS",
+          "Bootstrap"
+        ]
+      },
+      {
+        "skillNumber": "skill-2",
+        "category": "Backend",
+        "categoryList": ["Express.js", "SrpingBoot", "Node.js"]
+      },
+      {
+        "skillNumber": "skill-3",
+        "category": "Lenguajes",
+        "categoryList": ["Javascript", "Java", "Python", "C#", "C++", "Kotlin"]
+      }
+    ]
+  },
+  "Jobs": {
+    "heading": "Trabajos",
+    "textSec": "Pasados",
+    "smHeading": "Estos son los lugares donde he trabajado"
+  },
+  "Projects": {
+    "heading": "Mis",
+    "textSec": "Proyectos",
+    "smHeading": "Estos son algunos de mis proyectos",
+    "projectItem": [
+      {
+        "projectNumber": "project1-img",
+        "liveLocation": "https://portfolio-diego-salas.herokuapp.com",
+        "githubLocation": "https://github.com/DiegoSalas27/portfolio",
+        "projectName": "Portfolio app",
+        "projectDetail": "Esta aplicación fue hecha en React.js y con la ayuda del preprocesador Sass. Fue grandioso poder realizar esta aplicación web dado que me permitió aprender sobre Sass para redactar de una manera mucho más concreta y lógica css. El diseño fue realizado con css puro y un poco de bootstrap. Finalmente, le he añadido la opción para poder cambiar de idioma usando la biblioteca i18next-react, la cual ha resultado de fácil integración en este poryecto.",
+        "technologies": "Mysql, Express, React, Node, HTML, CSS, Sass, i18next, Nodemailer"
+      },
+      {
+        "projectNumber": "project2-img",
+        "liveLocation": "https://ecommerce-mearn.herokuapp.com/",
+        "githubLocation": "https://github.com/DiegoSalas27/ecommerce-mern-stack",
+        "projectName": "E-commerce mern stack app",
+        "projectDetail": "Esta es un aplicación para administración básica de existencias. Se pueden crear, actualizar, listar y eliminar proudctos, ususarios y categorías. Se ha utilizado la ORM Sequelize así como también la base de datos MySql. Existen funcionalidades interesantes como seguridad de rutas, autenticación con Json web tokens. La aplicación es totalmente responsive.",
+        "technologies": "Mysql, Express, React, Node, HTML, CSS, Sequelize"
+      },
+      {
+        "projectNumber": "project3-img",
+        "liveLocation": "https://imagerecognition-app-dominic.herokuapp.com/",
+        "githubLocation": "https://github.com/DiegoSalas27/ImageBrainApi",
+        "projectName": "Face recognition App",
+        "projectDetail": "Este es mi primer proyecto en React que realicé con la ayuda del curso 'The complete web developer' de Andrei Neagioe. En esta aplicación el usuario se puede registrar, iniciar sesión, e ingresar una url de una imagen para que el sistema pueda detectar si es que encuentra un rostro en ella.",
+        "technologies": "Postgres, Express, React, Node, HTML, CSS, Knex, Clarifi"
+      }
+    ]
+  }
+}

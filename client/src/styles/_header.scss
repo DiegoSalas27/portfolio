@@ -74,6 +74,19 @@
         background: darken($secondary-color, 5);
       }
     }
+
+    .translate-container {
+      cursor: pointer;
+      padding: 3px;
+      background: $secondary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .translate {
+        padding: 8px 16px;
+      }
+    }
   }
 }
 
@@ -97,6 +110,11 @@
     .nav-item {
       margin: 12px !important;
     }
+  }
+
+  .translate-container {
+    cursor: pointer;
+    margin: 12px !important;
   }
 
   .btn-menu {

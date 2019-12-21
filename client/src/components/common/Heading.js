@@ -1,12 +1,12 @@
 import React from "react";
 
-function Heading(props) {
+function Heading({ heading, textSec, smHeading }) {
   return (
     <div>
       <h1 className="lg-heading">
-        {props.heading} <span className="text-sec">{props.textSec}</span>
+        {heading} <span className="text-sec">{textSec}</span>
       </h1>
-      <h2 className="sm-heading">{props.smHeading}</h2>
+      <h2 className="sm-heading">{smHeading}</h2>
     </div>
   );
 }

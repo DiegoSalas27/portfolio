@@ -1,15 +1,15 @@
 import React from "react";
 import Heading from "../../common/Heading";
 import ProjectItem from "./ProjectItem";
-import { projectItem } from "../../resources";
 
-function Projects() {
+function Projects({ t }) {
+  const projectItem = t("Projects.projectItem", { returnObjects: true });
   return (
     <div className="project-main">
       <Heading
-        heading={"My"}
-        textSec={"Projects"}
-        smHeading={"This are some of my projects"}
+        heading={t("Projects.heading")}
+        textSec={t("Projects.textSec")}
+        smHeading={t("Projects.smHeading")}
       />
       <div className="project">
         {projectItem.map((project, i) => {

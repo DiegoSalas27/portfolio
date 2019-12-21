@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import classnames from "classnames";
 
-function Banner(props) {
+function Banner({ loader, loaderImage, t }) {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
@@ -16,8 +16,7 @@ function Banner(props) {
 
   async function sendEmail(e) {
     e.preventDefault();
-    const { loader, loaderImage } = props;
-    loaderImage.current.innerHTML = "Seding email...";
+    loaderImage.current.innerHTML = t("Loader.loading");
     loader.current.classList.add("show");
 
     const messenger = {
@@ -43,7 +42,7 @@ function Banner(props) {
           text: ""
         }
       });
-      loaderImage.current.innerHTML = "Email sent!";
+      loaderImage.current.innerHTML = t("Loader.doneLoading");
       setEmail("");
       setSubject("");
       setBody("");
@@ -64,7 +63,7 @@ function Banner(props) {
           <div className="row">
             <div className="col-md-6 text-light" style={{ float: "left" }}>
               <h1 className="display-4">Diego Salas Noain</h1>
-              <p className="lead">Full Stack Developer.</p>
+              <p className="lead">{t("Banner.leadText")}</p>
               <div className="icons">
                 <a href="https://www.facebook.com/diego.salasnoain">
                   <i className="fab fa-twitter fa-2x"></i>
@@ -80,27 +79,22 @@ function Banner(props) {
                 </a>
               </div>
               <div className="short-bio">
-                <p>
-                  Certified English teacher, cook and professional software
-                  developer. I am a Full Stack web developer since 2018. I am
-                  really passionate and enjoy the great outcomes from designing
-                  and coding.
-                </p>
+                <p>{t("Banner.shortBioText")}</p>
               </div>
             </div>
             <div className="col-md-6 right-menu text-light">
               <form onSubmit={sendEmail}>
                 <h3 className="display-6 text-light">
-                  Currently available for employment opportunities
+                  {t("Banner.display-6Text")}
                 </h3>
-                <p className="lead-email">Send me an email.</p>
+                <p className="lead-email">{t("Banner.lead-email")}</p>
                 <div className="form-g">
                   <input
                     type="text"
                     className={classnames({
                       "is-invalid": error.message.email
                     })}
-                    placeholder="Enter you email"
+                    placeholder={t("Banner.emailPlaceholder")}
                     name="email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
@@ -117,7 +111,7 @@ function Banner(props) {
                     className={classnames({
                       "is-invalid": error.message.subject
                     })}
-                    placeholder="Enter subject"
+                    placeholder={t("Banner.subjectPlaceholder")}
                     name="subject"
                     value={subject}
                     onChange={e => setSubject(e.target.value)}
@@ -135,7 +129,7 @@ function Banner(props) {
                     className={classnames({
                       "is-invalid": error.message.text
                     })}
-                    placeholder="Enter message"
+                    placeholder={t("Banner.bodyPlaceholder")}
                     name="body"
                     value={body}
                     onChange={e => setBody(e.target.value)}
@@ -144,7 +138,11 @@ function Banner(props) {
                     <div className="invalid-feedback">{error.message.text}</div>
                   )}
                 </div>
-                <input className="btn-send" type="submit" value="Send" />
+                <input
+                  className="btn-send"
+                  type="submit"
+                  value={t("Banner.buttonValue")}
+                />
               </form>
             </div>
           </div>
