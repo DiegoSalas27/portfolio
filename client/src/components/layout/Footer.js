@@ -6,7 +6,7 @@ function Footer() {
       <ul className="footer-nav">
         <li className="footer-item">
           <a className="footer-link">
-            Phone: <span className="text-sec">959363398</span>
+            Phone: <span className="text-sec">(959363398)</span>
           </a>
         </li>
         <li className="footer-item">

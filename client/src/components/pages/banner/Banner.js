@@ -44,6 +44,9 @@ function Banner(props) {
         }
       });
       loaderImage.current.innerHTML = "Email sent!";
+      setEmail("");
+      setSubject("");
+      setBody("");
       setTimeout(() => {
         loader.current.classList.remove("show");
       }, 2000);
@@ -56,10 +59,7 @@ function Banner(props) {
 
   return (
     <div className="banner">
-      <div
-        className={`jumbotron jumbotron-fluid index-banner mb-0`}
-        style={{ paddingTop: "100px" }}
-      >
+      <div className={`jumbotron jumbotron-fluid index-banner mb-0`}>
         <div className="container-fluid px-4">
           <div className="row">
             <div className="col-md-6 text-light" style={{ float: "left" }}>
@@ -81,16 +81,18 @@ function Banner(props) {
               </div>
               <div className="short-bio">
                 <p>
-                  English teacher, Cook and passionate software developer. I am
-                  a Full Stack web developer since 2018. I really enjoy the
-                  feeling for desingning and coding and see the results coming
-                  to life on the screen
+                  Certified English teacher, cook and professional software
+                  developer. I am a Full Stack web developer since 2018. I am
+                  really passionate and enjoy the great outcomes from designing
+                  and coding.
                 </p>
               </div>
             </div>
             <div className="col-md-6 right-menu text-light">
               <form onSubmit={sendEmail}>
-                <h3 className="display-4 text-light">Wanna hire me?</h3>
+                <h3 className="display-6 text-light">
+                  Currently available for employment opportunities
+                </h3>
                 <p className="lead-email">Send me an email.</p>
                 <div className="form-g">
                   <input

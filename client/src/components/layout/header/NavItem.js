@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavItem(props) {
+function NavItem({ current, to, name, changeActive }, ref) {
   return (
-    <li className={`nav-item ${props.current}`} onClick={props.changeActive}>
-      <Link className="nav-link" to={props.to}>
-        {props.name}
+    <li ref={ref} className={`nav-item ${current}`} onClick={changeActive}>
+      <Link className="nav-link" to={to}>
+        {name}
       </Link>
     </li>
   );
 }
 
-export default NavItem;
+const forwardRef = React.forwardRef(NavItem);
+
+export default forwardRef;

@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useRef, createRef } from "react";
 import { navItem } from "../../resources";
 import NavItem from "./NavItem";
 
-function Header({}, ref) {
-  function changeActive(e) {
-    const navItems = ref[2].current.querySelectorAll(".nav-item");
+function Header({ main }, ref) {
+  const refs = useRef(
+    Array.from({ length: navItem.length }, a => createRef(null))
+  );
 
-    navItems.forEach(item => {
-      item.classList.remove("current");
+  function changeActive(e) {
+    refs.current.forEach(item => {
+      item.current.classList.remove("current");
     });
+
+    if (window.screen.width < 700) {
+      ref[1].current.classList.toggle("show");
+      main.current.classList.toggle("move");
+    }
 
     e.currentTarget.classList.add("current");
   }
@@ -23,15 +30,16 @@ function Header({}, ref) {
           <div className="btn-line"></div>
         </div>
         <nav className="menu" ref={ref[1]}>
-          <ul className="menu-nav" ref={ref[2]}>
+          <ul className="menu-nav">
             {navItem.map((item, i) => {
               return (
                 <NavItem
                   key={i}
-                  changeActive={changeActive}
+                  ref={refs.current[i]}
                   to={item.to}
                   current={item.current}
                   name={item.name}
+                  changeActive={changeActive}
                 />
               );
             })}

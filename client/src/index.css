@@ -71,7 +71,7 @@
   .menu-nav {
     display: flex; }
     .menu-nav .nav-item {
-      padding: 12px !important; }
+      margin: 12px !important; }
   .btn-menu {
     display: none; } }
 
@@ -79,7 +79,8 @@
   background-image: url("./img/developer-banner.jpg");
   background-attachment: fixed;
   background-size: cover;
-  min-height: calc(100vh - 60px); }
+  min-height: calc(100vh - 60px);
+  padding-top: 100px !important; }
 
 .banner .lead {
   color: #eece1a;

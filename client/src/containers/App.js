@@ -12,7 +12,6 @@ import Loader from "../components/layout/Loader";
 function App() {
   const btnMenu = useRef(null);
   const nav = useRef(null);
-  const navItem = useRef(null);
   const main = useRef(null);
   const loader = useRef(null);
   const loaderImage = useRef(null);
@@ -22,21 +21,12 @@ function App() {
       nav.current.classList.toggle("show");
       main.current.classList.toggle("move");
     });
-    const navItems = navItem.current.querySelectorAll(".nav-item");
-    if (window.screen.width < 700) {
-      navItems.forEach(item => {
-        item.addEventListener("click", () => {
-          nav.current.classList.toggle("show");
-          main.current.classList.toggle("move");
-        });
-      });
-    }
   });
 
   return (
     <Router>
       <Loader ref={[loader, loaderImage]} />
-      <Header ref={[btnMenu, nav, navItem]} />
+      <Header main={main} ref={[btnMenu, nav]} />
       <div className="main" ref={main}>
         <Route
           exact
