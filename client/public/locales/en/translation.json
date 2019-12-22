@@ -74,12 +74,12 @@
       }
     ]
   },
-  "Jobs": {
+  "JobsPage": {
     "heading": "Past",
     "textSec": "Jobs",
     "smHeading": "This is where I have worked"
   },
-  "Projects": {
+  "ProjectsPage": {
     "heading": "My",
     "textSec": "Projects",
     "smHeading": "This are some of my projects",
@@ -109,5 +109,13 @@
         "technologies": "Postgres, Express, React, Node, HTML, CSS, Knex, Clarifi"
       }
     ]
-  }
+  },
+  "Home": "",
+  "About me": "AboutMe",
+  "Jobs": "Jobs",
+  "Projects": "Projects",
+  "/AboutMe": "About me",
+  "/": "Home",
+  "/Jobs": "Jobs",
+  "/Projects": "Projects"
 }

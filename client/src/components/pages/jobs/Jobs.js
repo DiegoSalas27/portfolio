@@ -7,9 +7,9 @@ function Jobs({ t }) {
   return (
     <div className="jobs">
       <Heading
-        heading={t("Jobs.heading")}
-        textSec={t("Jobs.textSec")}
-        smHeading={t("Jobs.smHeading")}
+        heading={t("JobsPage.heading")}
+        textSec={t("JobsPage.textSec")}
+        smHeading={t("JobsPage.smHeading")}
       />
       <div className="job-info">
         {jobs.map((job, i) => {

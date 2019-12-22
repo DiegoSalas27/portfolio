@@ -3,13 +3,13 @@ import Heading from "../../common/Heading";
 import ProjectItem from "./ProjectItem";
 
 function Projects({ t }) {
-  const projectItem = t("Projects.projectItem", { returnObjects: true });
+  const projectItem = t("ProjectsPage.projectItem", { returnObjects: true });
   return (
     <div className="project-main">
       <Heading
-        heading={t("Projects.heading")}
-        textSec={t("Projects.textSec")}
-        smHeading={t("Projects.smHeading")}
+        heading={t("ProjectsPage.heading")}
+        textSec={t("ProjectsPage.textSec")}
+        smHeading={t("ProjectsPage.smHeading")}
       />
       <div className="project">
         {projectItem.map((project, i) => {

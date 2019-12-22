@@ -1,8 +1,10 @@
 import React, { useRef, createRef } from "react";
 import NavItem from "./NavItem";
+import { useLocation } from "react-router-dom";
 
 function Header({ main, t, translate }, ref) {
-  const currentItem = localStorage.link;
+  var currentItem = localStorage.link;
+  const location = useLocation();
   const navItems = t("Heading.NavItem", { returnObjects: true });
   const refs = useRef(
     Array.from({ length: navItems.length }, a => createRef(null))
