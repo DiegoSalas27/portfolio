@@ -1,0 +1,8 @@
+{
+  "app": {
+    "ValidEmail": "Ingrese un correo válido",
+    "EmptyEmail": "Ingrese correo",
+    "EmptySubject": "Debe ingresar asunto",
+    "EmptyText": "Debe ingresar texto"
+  }
+}

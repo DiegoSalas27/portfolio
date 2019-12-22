@@ -1,0 +1,8 @@
+{
+  "app": {
+    "ValidEmail": "You must enter a valid email",
+    "EmptyEmail": "You must enter an email",
+    "EmptySubject": "You must enter a subject",
+    "EmptyText": "You must enter a text"
+  }
+}

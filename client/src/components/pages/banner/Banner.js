@@ -34,7 +34,10 @@ function Banner({ loader, loaderImage, t }) {
     };
 
     try {
-      await axios.post("/sendEmail", messenger);
+      var config = {
+        headers: { "Accept-Language": localStorage.i18nextLng }
+      };
+      await axios.post("/sendEmail", messenger, config);
       setError({
         message: {
           email: "",
