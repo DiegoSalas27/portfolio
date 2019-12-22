@@ -12,11 +12,6 @@ import Loader from "../components/layout/Loader";
 
 function App() {
   const { t, i18n } = useTranslation();
-
-  const translate = lang => {
-    i18n.changeLanguage(lang);
-  };
-
   const btnMenu = useRef(null);
   const nav = useRef(null);
   const main = useRef(null);
@@ -24,11 +19,29 @@ function App() {
   const loaderImage = useRef(null);
 
   useEffect(() => {
-    btnMenu.current.addEventListener("click", () => {
-      nav.current.classList.toggle("show");
-      main.current.classList.toggle("move");
+    btnMenu.current.addEventListener("click", clickNavButton);
+    return () => {
+      //avoid certain bugs
+      btnMenu.current.removeEventListener("click", clickNavButton);
+    };
+  }, []);
+
+  const translate = (lang, refs) => {
+    i18n.changeLanguage(lang);
+    refs.current.forEach((item, i) => {
+      //change localStorage key when language changes
+      if (localStorage.link == item.current.innerText) {
+        const navItems = t("Heading.NavItem", { returnObjects: true });
+        console.log(navItems[i].name);
+        localStorage.setItem("link", navItems[i].name);
+      }
     });
-  });
+  };
+
+  const clickNavButton = () => {
+    nav.current.classList.toggle("show");
+    main.current.classList.toggle("move");
+  };
 
   return (
     <Router>

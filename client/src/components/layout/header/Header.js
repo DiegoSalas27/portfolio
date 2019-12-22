@@ -34,10 +34,10 @@ function Header({ main, t, translate }, ref) {
         <nav className="menu" ref={ref[1]}>
           <ul className="menu-nav">
             <div className="translate-container">
-              <div className="translate" onClick={() => translate("en")}>
+              <div className="translate" onClick={() => translate("en", refs)}>
                 {t("Heading.enTranslation")} &nbsp;
               </div>
-              <div className="translate" onClick={() => translate("es")}>
+              <div className="translate" onClick={() => translate("es", refs)}>
                 {t("Heading.esTranslation")}
               </div>
             </div>

@@ -70,7 +70,7 @@
   left: 0;
   top: 60px; }
 
-@media (min-width: 700px) {
+@media (min-width: 836px) {
   .menu {
     position: relative;
     z-index: 2;
@@ -83,8 +83,6 @@
       margin: 12px !important; }
   .translate-container {
     cursor: pointer;
-    position: relative;
-    left: 0;
     margin: 12px !important; }
   .btn-menu {
     display: none; } }
