@@ -6,12 +6,7 @@ function Loader({ t }, ref) {
   let history = useHistory();
 
   useEffect(() => {
-    if (
-      t(location.pathname) !== localStorage.link &&
-      localStorage.link !== undefined
-    ) {
-      localStorage.link = t(location.pathname);
-    }
+    localStorage.link = t(location.pathname);
     history.push(location.pathname);
   }, []);
 
