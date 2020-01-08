@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "concurrently": "^5.0.1",
+    "concurrently": "^5.0.2",
     "express": "^4.17.1",
     "i18next": "^19.0.2",
     "i18next-express-middleware": "^1.9.1",

@@ -323,10 +323,12 @@
           outline: none;
           box-shadow: none; }
     .project .project-info .project1-img {
-      background-image: url("./img/portfolio.png"); }
+      background-image: url("./img/burger.jpg"); }
     .project .project-info .project2-img {
-      background-image: url("./img/ecommerce.png"); }
+      background-image: url("./img/portfolio.png"); }
     .project .project-info .project3-img {
+      background-image: url("./img/ecommerce.png"); }
+    .project .project-info .project4-img {
       background-image: url("./img/facerecog.png"); }
     .project .project-info .project-content {
       position: absolute;
@@ -432,7 +434,7 @@ body {
     margin-bottom: 20px; }
   .about-info {
     padding: 0;
-    grid-template-areas: "bioimage" "bio";
+    grid-template-areas: "bioimage" "bio";
     grid-template-columns: 1fr; }
   .skill-content {
     margin: 1.5rem 1.5rem;
@@ -457,7 +459,7 @@ body {
     grid-template-columns: repeat(2, 1fr); }
   .job-info {
     padding: 45px 0;
-    grid-template-areas: "job1" "job2";
+    grid-template-areas: "job1" "job2";
     grid-template-columns: 1fr; }
   .lg-heading {
     font-size: 3rem;

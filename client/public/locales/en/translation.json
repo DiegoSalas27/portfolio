@@ -86,6 +86,14 @@
     "projectItem": [
       {
         "projectNumber": "project1-img",
+        "liveLocation": "https://burger-app-b1c39.firebaseapp.com/",
+        "githubLocation": "https://github.com/DiegoSalas27/Burger-Builder",
+        "projectName": "Burger app",
+        "projectDetail": "React web application for building your own burgers and buying them. The features that makes this project so interesting is how React was used to make this project more efficient in terms of resources, unnecesary rendering redundancy, code splitting, etc. Using it's APIs",
+        "technologies": "Firebase, React, HTML, CSS modules, APIs, React Hooks, Lifecycle Hooks"
+      },
+      {
+        "projectNumber": "project2-img",
         "liveLocation": "https://portfolio-diego-salas.herokuapp.com",
         "githubLocation": "https://github.com/DiegoSalas27/portfolio",
         "projectName": "Portfolio app",
@@ -93,7 +101,7 @@
         "technologies": "Mysql, Express, React, Node, HTML, CSS, Sass, i18next, Nodemailer"
       },
       {
-        "projectNumber": "project2-img",
+        "projectNumber": "project3-img",
         "liveLocation": "https://ecommerce-mearn.herokuapp.com/",
         "githubLocation": "https://github.com/DiegoSalas27/ecommerce-mern-stack",
         "projectName": "E-commerce mern stack app",
@@ -101,7 +109,7 @@
         "technologies": "Mysql, Express, React, Node, HTML, CSS, Sequelize"
       },
       {
-        "projectNumber": "project3-img",
+        "projectNumber": "project4-img",
         "liveLocation": "https://imagerecognition-app-dominic.herokuapp.com/",
         "githubLocation": "https://github.com/DiegoSalas27/ImageBrainApi",
         "projectName": "Face recognition App",
